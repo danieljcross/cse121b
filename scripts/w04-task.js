@@ -19,8 +19,8 @@ myProfile.placesLived.push(
 );
 
 document.querySelector('#name').textContent = myProfile.name;
-document.querySelector('#photo') = myProfile.photo;
-document.querySelector('#name') = myProfile.photo;
+document.querySelector('#photo').photo = myProfile.photo;
+document.querySelector('#name').photo = myProfile.photo;
 
 myProfile.favoriteFoods.forEach(food => {
     let li = document.createElement('li');
@@ -28,24 +28,16 @@ myProfile.favoriteFoods.forEach(food => {
     document.querySelector('#favorite-foods').appendChild(li);
 });
 
-/* Populate Profile Object with placesLive objects */
+myProfile.hobbies.forEach(hobby => {
+    let ul = document.createElement('ul');
+    ul.textContent = hobby;
+    document.querySelector('#hobbies').appendChild(ul);
+});
 
-
-
-
-/* DOM Manipulation - Output */
-
-/* Name */
-
-/* Photo with attributes */
-
-
-/* Favorite Foods List*/
-
-
-/* Hobbies List */
-
-
-/* Places Lived DataList */
-
-
+myProfile.placesLived.forEach(place, length => {
+    let dt = document.createElement('dt');
+    dt.textContent = place;
+    let dd = document.createElement('dd');
+    dd.textContent = length;
+    document.querySelector('#places-lived').appendChild(dl);
+});
