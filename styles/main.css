@@ -197,6 +197,20 @@ footer {
     gap: 1rem;
 }
 
+.center {
+    text-align: center;
+}
+
+.get_out_of_here {
+    margin-top: 20px;
+}
+
+.h4 {
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* ID Selectors */
 
 #home {
@@ -277,6 +291,31 @@ footer {
     height: auto;
     box-shadow: 0 0 30px #777;
     margin: .5rem;
+}
+
+
+#calculate {
+    display: block;
+    height: 40px;
+    width: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: navy;
+    font-weight: bolder;
+    color: rgb(254, 235, 211);
+}
+
+#get_farther_away {
+    margin-top: 30px;
+}
+
+#get_closer {
+    margin-bottom: 0px;
+}
+
+#h4 {
+    margin-top: 30px;
 }
 
 /* Media Queries */
