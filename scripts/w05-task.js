@@ -2,13 +2,13 @@
 
 /* Declare and initialize global variables */
 
-const templesElement = document.querySelector('#gridly');
+const templesElement = document.querySelector('#temples');
 let templeList = []
 
 /* async displayTemples Function */
 
 const displayTemples = (temples) => {
-templeList.forEach(temple => {
+temples.forEach(temple => {
     let articleElement = document.createElement('article'); 
     let h3Element = document.createElement('h3');
     h3Element.textContent = temple.templeName;
@@ -43,32 +43,42 @@ const getTemples = async () => {
 /* reset Function */
 
 const reset = () => {
-    let templesElement = document.getElementById('gridly');
+    let templesElement = document.getElementById('temples');
     templesElement.innerHTML = '';
 };
 
 /* sortBy Function */
 
-function sortBy(temples){
+function sortBy(change){
     reset()
-    let filter = document.getElementById('sortBy').value;
+    let filter = change.target.value;
 
     switch (filter) {
         case "utah":
             let utahTemples = templeList.filter((temple) => {
                 return temple.location.toLowerCase().includes('utah')
             });
-        case "nonutah":
+            displayTemples(utahTemples);
+            break;
+        case "notutah":
+
             let nonUtahTemples = templeList.filter((temple) =>{
+                console.log(temple.location.toLowerCase().includes('utah'))
                 return !temple.location.toLowerCase().includes('utah')
             });
+            displayTemples(nonUtahTemples);
+            break;
         case 'older':
             let olderTemples = templeList.filter((temple) => {
-                let dedicatedDate = new Date(temple.dedicatedDate, 0, 1);
+                let dedicatedDate = new Date(temple.dedicatedDate);
+                console.log(temple.dedicatedDate);
                 return dedicatedDate < new Date(1950, 0, 1);
             });
+            displayTemples(olderTemples);
+            break;
         case 'all':
-                return temples;
+                displayTemples(templeList);
+                break;
     }
 };
 
@@ -77,4 +87,4 @@ getTemples();
 
 /* Event Listener */
 
-document.getElementById('sortBy').addEventListener('change', () => {sortBy(templeList)});
+document.getElementById('sortBy').addEventListener('change', sortBy)
