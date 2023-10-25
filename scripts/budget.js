@@ -11,7 +11,7 @@ async function doCalculations(){
     let income_off = data.off[0] * data.on[1] * 14;
     let income_summer = data.summer[0] * data.summer[1] * 7;
 
-    console.log(income_on);
+    console.log(income_off);
 
     // Calculates spending by semester
     let spending_on = parseFloat(data.on[2]) + parseFloat(data.on[3]) + parseFloat(data.on[4]) + parseFloat(data.on[5]) + parseFloat(data.on[6]);
@@ -20,7 +20,7 @@ async function doCalculations(){
 
     // Calculates totals after each semester
     let after_on = income_on - spending_on;
-    let after_on2 = after_on + income_off - spending_off;
+    let after_on2 = after_on + income_on - spending_on;
     let after_off = after_on2 + income_off - spending_off;
     let after_summer = after_off + income_summer - spending_summer;
 
