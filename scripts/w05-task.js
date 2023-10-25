@@ -56,24 +56,23 @@ function sortBy(change){
     switch (filter) {
         case "utah":
             let utahTemples = templeList.filter((temple) => {
-                return temple.location.toLowerCase().includes('utah')
+                return temple.location.toLowerCase().includes('utah');
             });
             displayTemples(utahTemples);
             break;
         case "notutah":
 
             let nonUtahTemples = templeList.filter((temple) =>{
-                console.log(temple.location.toLowerCase().includes('utah'))
-                return !temple.location.toLowerCase().includes('utah')
+                return !temple.location.toLowerCase().includes('utah');
             });
             displayTemples(nonUtahTemples);
             break;
         case 'older':
             let olderTemples = templeList.filter((temple) => {
-                let dedicatedDate = new Date(temple.dedicatedDate);
-                console.log(temple.dedicatedDate);
+                let dedicatedDate = new Date(temple.dedicated);
                 return dedicatedDate < new Date(1950, 0, 1);
             });
+            console.log(olderTemples);
             displayTemples(olderTemples);
             break;
         case 'all':
@@ -87,4 +86,4 @@ getTemples();
 
 /* Event Listener */
 
-document.getElementById('sortBy').addEventListener('change', sortBy)
+document.getElementById('sortBy').addEventListener('change', sortBy);
