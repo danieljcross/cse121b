@@ -63,5 +63,7 @@ async function doCalculations(){
 
 
 // Actually does this function
-let calculate = document.getElementById('calculate');
-calculate.addEventListener('click', doCalculations);
+document.addEventListener('DOMContentLoaded', function() {
+    let calculate = document.getElementById('calculate');
+    calculate.addEventListener('click', doCalculations);
+});
