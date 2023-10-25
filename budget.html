@@ -19,7 +19,9 @@
 <main class="center">
 <!-- Income -->
 <h2 class="get_out_of_here">Income</h2>
+
 <h3 class="get_out_of_here" id="get_closer">On Track</h3>
+
 <label for="hpw_on">Hours per Week: </label>
 <input type="number" id="hpw_on" class="get_out_of_here" value="0">
 
@@ -27,11 +29,20 @@
 <input type="number" id="dph_on" value="0">
 
 <h3 class="get_out_of_here">Off Track</h3>
+
 <label for="hpw_off">Hours per Week: </label>
 <input type="number" id="hpw_off" value="0">
 
 <label for="dph_off">Rate ($ per Hour): </label>
 <input type="number" id="dph_off" value="0">
+
+<h3 class="get_out_of_here">Summer</h3>
+
+<label for="hpw_summer">Hours per Week: </label>
+<input type="number" id="hpw_summer" value="0">
+
+<label for="dph_summer">Rate ($ per Hour): </label>
+<input type="number" id="dph_summer" value="0">
 
 </main>
 
@@ -98,9 +109,19 @@
 </main>
 
 
-<main id="table">
+<table border="1">
+  <thead>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </thead>
+  <tbody id="table"></tbody>
 <!-- Put in the table here -->
-</main>
+</table>
 
 
 </body>
