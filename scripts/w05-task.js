@@ -29,22 +29,29 @@ const getTemples = async () => {
         const response = await fetch('https://byui-cse.github.io/cse121b-ww-course/resources/temples.json')
         if (response.ok){
             templeList = await response.json();
-            displayTemples(templeList)
+            displayTemples(templeList);
         }
         else{
-            console.error('Error fetching data ', response.statusText)
+            console.error('Error fetching data ', response.statusText);
         }
     }
     catch (error){
-        console.error('Error fetching data', error.message)
+        console.error('Error fetching data', error.message);
     };
 };
 
 /* reset Function */
 
+const reset = () => {
+    let templesElement = document.getElementById('gridly');
+    templesElement.innerHTML = '';
+};
 
 /* sortBy Function */
 
+function sortBy(temples){
+    reset()
+};
 
 
 getTemples();
