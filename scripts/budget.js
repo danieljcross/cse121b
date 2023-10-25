@@ -1,4 +1,4 @@
-import {assignVariables} from "./assignVariables.js"
+import {assignVariables} from "./assignVariables.js";
 
 async function doCalculations(){
     // Waits for data from assignVariables function
@@ -11,7 +11,7 @@ async function doCalculations(){
     let income_off = data.off[0] * data.on[1] * 14;
     let income_summer = data.summer[0] * data.summer[1] * 7;
 
-    console.log(income_on)
+    console.log(income_on);
 
     // Calculates spending by semester
     let spending_on = parseFloat(data.on[2]) + parseFloat(data.on[3]) + parseFloat(data.on[4]) + parseFloat(data.on[5]) + parseFloat(data.on[6]);

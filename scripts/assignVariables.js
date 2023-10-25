@@ -47,7 +47,7 @@ async function assignVariables(){
         if (element.value == 0){
             element.value = data.on[element.id.split("_")[0]];
         }
-        costs_values.on.push(element.value)
+        costs_values.on.push(element.value);
     };
 
     for (let i = 0; i < costs_off.length; i++){
@@ -55,7 +55,7 @@ async function assignVariables(){
         if (element.value == 0){
             element.value = data.off[element.id.split("_")[0]];
         }
-        costs_values.off.push(element.value)
+        costs_values.off.push(element.value);
     };
 
     for (let i = 0; i < costs_summer.length; i++){
@@ -63,7 +63,7 @@ async function assignVariables(){
         if (element.value == 0){
             element.value = data.summer[element.id.split("_")[0]];
         }
-        costs_values.summer.push(element.value)
+        costs_values.summer.push(element.value);
     };
 
     return costs_values;
