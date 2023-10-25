@@ -12,7 +12,7 @@ templeList.forEach(temple => {
     let articleElement = document.createElement('article'); 
     let h3Element = document.createElement('h3');
     h3Element.textContent = temple.templeName;
-    let imageElement = document.createElement('image');
+    let imageElement = document.createElement('img');
     imageElement.setAttribute('src', temple.imageUrl);
     imageElement.setAttribute('alt', temple.location);
     articleElement.appendChild(h3Element);
