@@ -51,9 +51,30 @@ const reset = () => {
 
 function sortBy(temples){
     reset()
+    let filter = document.getElementById('sortBy').value;
+
+    switch (filter) {
+        case "utah":
+            let utahTemples = templeList.filter((temple) => {
+                return temple.location.toLowerCase().includes('utah')
+            });
+        case "nonutah":
+            let nonUtahTemples = templeList.filter((temple) =>{
+                return !temple.location.toLowerCase().includes('utah')
+            });
+        case 'older':
+            let olderTemples = templeList.filter((temple) => {
+                let dedicatedDate = new Date(temple.dedicatedDate, 0, 1);
+                return dedicatedDate < new Date(1950, 0, 1);
+            });
+        case 'all':
+                return temples;
+    }
 };
 
 
 getTemples();
 
 /* Event Listener */
+
+document.getElementById('sortBy').addEventListener('change', () => {sortBy(templeList)});
