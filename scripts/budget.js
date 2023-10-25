@@ -8,7 +8,7 @@ async function doCalculations(){
 
     // Calculates incomes
     let income_on = data.on[0] * data.on[1] * 14;
-    let income_off = data.off[0] * data.on[1] * 14;
+    let income_off = data.off[0] * data.off[1] * 14;
     let income_summer = data.summer[0] * data.summer[1] * 7;
 
     console.log(income_off);

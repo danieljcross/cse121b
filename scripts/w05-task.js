@@ -8,17 +8,15 @@ let templeList = []
 /* async displayTemples Function */
 
 const displayTemples = (temples) => {
-templeList.forEach(temples => {
+templeList.forEach(temple => {
     let articleElement = document.createElement('article'); 
     let h3Element = document.createElement('h3');
-    h3Element.textContent = temples.templeName;
+    h3Element.textContent = temple.templeName;
     let imageElement = document.createElement('image');
-    imageElement.src = temples.imageUrl;
-    imageElement.alt = temples.location;
+    imageElement.setAttribute('src', temple.imageUrl);
+    imageElement.setAttribute('alt', temple.location);
     articleElement.appendChild(h3Element);
     articleElement.appendChild(imageElement);
-
-    /* Not checked yet */
     templesElement.appendChild(articleElement);
 });
 }
