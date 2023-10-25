@@ -29,6 +29,22 @@ async function assignVariables(){
     let costs_off = [hpw_off, dph_off, tuition_off, housing_off, food_off, car_off, other_off]
     let costs_summer = [hpw_summer, dph_summer, tuition_summer, housing_summer, food_summer, car_summer, other_summer]
 
+    // let costs_values_reorganized = {
+    //     "tuition":[],
+    //     "housing":[],
+    //     "food":[],
+    //     "car":[],
+    //     "other":[]
+    // }
+
+    // for (let i = 0; i < costs_values_reorganized.length; i++){
+    //     let element = costs_values_reorganized[i];
+    //     if (element.value == 0){
+    //         element.value = data.on[element.id.split("_")[0]];
+    //     }
+    //     costs_values.on.push(element.value)
+    // }
+
 
     let costs_values = {
         "on":[],
@@ -43,6 +59,7 @@ async function assignVariables(){
         }
         costs_values.on.push(element.value)
     };
+
     for (let i = 0; i < costs_off.length; i++){
         let element = costs_off[i];
         if (element.value == 0){
@@ -50,6 +67,7 @@ async function assignVariables(){
         }
         costs_values.off.push(element.value)
     };
+
     for (let i = 0; i < costs_summer.length; i++){
         let element = costs_summer[i];
         if (element.value == 0){
@@ -57,13 +75,8 @@ async function assignVariables(){
         }
         costs_values.summer.push(element.value)
     };
+
     return costs_values;
-
-
-
-    let income_on = hpw_on * dph_on * 14;
-    let income_off = hpw_off * dph_off * 14;
-    let income_summer = hpw_summer * dph_summer * 7;
 }
 
 export {assignVariables};

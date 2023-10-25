@@ -3,7 +3,7 @@ import {assignVariables} from "./assignVariables.js"
 async function doCalculations(){
     const data = await assignVariables();
     console.log(data);
-    
+
 
     let table = document.getElementById('table');
     let newHTML = '<tr>';
@@ -13,34 +13,16 @@ async function doCalculations(){
     newHTML += `</tr>`;
     table.innerHTML += newHTML;
 
-    let income_on = 0;
-    let income_off = 0;
-    let income_summer = 0;
-    let spending_on = 0;
-    let off_spending_off = 0;
-    let spending_summer = 0;
+    let income_on = data.on[0] * data.on[1] * 14;
+    let income_off = data.off[0] * data.on[1] * 14;
+    let income_summer = data.summer[0] * data.summer[1] * 7;
 
-    for (i[0, 1] in data.on){
-        income_on += i;
-    };
-    for (i[0, 1] in data.off){
-        income_off += i;
-    };
-    for (i[0, 1] in data.summer){
-        income_summer += i;
-    };
 
-    for (i[2, 3, 4, 5, 6] in data.on){
-        spending_on += i;
-    };
-    for (i[2, 3, 4, 5, 6] in data.off){
-        spending_off += i;
-    };
-    for (i[2, 3, 4, 5, 6] in data.summer){
-        spending_summer += i;
-    };
+    let spending_on = data.on[2] + data.on[3] + data.on[4] + data.on[5] + data.on[6];
+    let spending_off = data.off[2] + data.off[3] + data.off[4] + data.off[5] + data.off[6];
+    let spending_summer = data.summer[2] + data.summer[3] + data.summer[4] + data.summer[5] + data.summer[6];
 
-}
+};
 
 
 let calculate = document.getElementById('calculate');
