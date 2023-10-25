@@ -25,32 +25,22 @@ async function assignVariables(){
     let other_off = document.getElementById('other_off');
     let other_summer = document.getElementById('other_summer');
 
-    let costs_on = [hpw_on, dph_on, tuition_on, housing_on, food_on, car_on, other_on]
-    let costs_off = [hpw_off, dph_off, tuition_off, housing_off, food_off, car_off, other_off]
-    let costs_summer = [hpw_summer, dph_summer, tuition_summer, housing_summer, food_summer, car_summer, other_summer]
-
-    // let costs_values_reorganized = {
-    //     "tuition":[],
-    //     "housing":[],
-    //     "food":[],
-    //     "car":[],
-    //     "other":[]
-    // }
-
-    // for (let i = 0; i < costs_values_reorganized.length; i++){
-    //     let element = costs_values_reorganized[i];
-    //     if (element.value == 0){
-    //         element.value = data.on[element.id.split("_")[0]];
-    //     }
-    //     costs_values.on.push(element.value)
-    // }
+    // Assigns variables to arrays tha will be used later
+    let costs_on = [hpw_on, dph_on, tuition_on, housing_on, food_on, car_on, other_on];
+    let costs_off = [hpw_off, dph_off, tuition_off, housing_off, food_off, car_off, other_off];
+    let costs_summer = [hpw_summer, dph_summer, tuition_summer, housing_summer, food_summer, car_summer, other_summer];
 
 
+    // Declares object to hold arrays
     let costs_values = {
         "on":[],
         "off":[],
         "summer":[]
     };
+
+
+    // These for loops split up the variable names to allow them to match the data they will be calling
+    // Calls JSON file only if they are still at the value of 0
 
     for (let i = 0; i < costs_on.length; i++){
         let element = costs_on[i];
@@ -77,6 +67,7 @@ async function assignVariables(){
     };
 
     return costs_values;
-}
+};
+
 
 export {assignVariables};

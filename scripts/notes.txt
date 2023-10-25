@@ -1,0 +1,29 @@
+    let table = document.getElementById('table');
+    let newHTML = `<tr>`;
+    heads.forEach( (head) => {
+        newHTML += `<th>${head}</th>`;
+    });
+
+    let table1 = document.getElementById('table');
+    let newHTML1 = `<tr>`;
+    on.forEach( (on1) => {
+        newHTML += `<th>${on1}</th>`;
+    });
+
+    let table2 = document.getElementById('table');
+    let newHTML2 = `<tr>`;
+    on.forEach( (on2) => {
+        newHTML += `<th>${on2}</th>`;
+    });
+
+    let table3 = document.getElementById('table');
+    let newHTML3 = `<tr>`;
+    off.forEach( (off1) => {
+        newHTML += `<th>${off1}</th>`;
+    });
+
+    let table4 = document.getElementById('table');
+    let newHTML4 = `<tr>`;
+    summer.forEach( (summer1) => {
+        newHTML += `<th>${summer1}</th>`;
+    });
